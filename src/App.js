@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-
 import "./styles.css";
 import ReactTable from "./ReactTable";
 import makeData from "./Utils/makeData";
@@ -8,15 +6,6 @@ import { columns } from "./Utils/helpers";
 
 export default function App() {
   const data = makeData(20);
-  const superToken = '218078420318941'
-  const superHeroAPI = `https://superheroapi.com/api/${superToken}/1`
-
-  React.useEffect(() => {
-    axios.get(superHeroAPI).then((response) => {
-      // setPost(response.data);
-      console.log('------superHeorAPI', response)
-    });
-  }, []);
 
   return (
     <>
