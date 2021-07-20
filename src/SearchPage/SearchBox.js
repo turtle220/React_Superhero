@@ -50,8 +50,10 @@ export default function DataTable() {
               localStorage
                 .getItem('inputName')
                 .split(',')
-                .map((res) => {
-                  return <option value={res} />
+                .map((res, key) => {
+                  if(key <= 10) {
+                    return <option value={res} />
+                  }
                 })}
           </datalist>
         </div>
