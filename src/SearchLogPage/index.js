@@ -1,4 +1,3 @@
-import { NONAME } from 'dns'
 import React, { useState } from 'react'
 import BackImage from '../Image/button-back.svg'
 
