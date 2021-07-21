@@ -44,6 +44,7 @@ export default function DataTable() {
             onKeyDown={(e) => {
               if (e.key === 'Enter') search(e.target.value)
             }}
+            onChange={(e)=> search(e.target.value)}
           />
           <datalist id='dataList'>
             {localStorage.getItem('inputName') &&
