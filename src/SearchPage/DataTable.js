@@ -8,12 +8,14 @@ export default function DataTable() {
   const results = useSelector((state) => state.search.value)
   const [on, setOn] = useState(true)
   const toggle = (btnID, eIDs) => {
-    setOn(on => !on)
+    console.log(btnID, '----key')
+    // setOn(on => !on)
     // Get the button that triggered this
     const theButton = document.getElementById(btnID)
     const theSubRow = document.getElementById(eIDs)
     // If the button is not expanded...
     if (theButton.getAttribute('aria-expanded') === 'false') {
+      theButton.classList.add('clicked')
       // Loop through the rows and show them
       theSubRow.classList.add('shown')
       theSubRow.classList.remove('hidden')
@@ -21,6 +23,8 @@ export default function DataTable() {
       theButton.setAttribute('aria-expanded', 'true')
       // Otherwise button is not expanded...
     } else {
+      theButton.classList.remove('clicked')
+
       theSubRow.classList.add('hidden')
       theSubRow.classList.remove('shown')
       // Now set the button to collapsed
