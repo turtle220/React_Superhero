@@ -8,7 +8,6 @@ export default function DataTable() {
   const results = useSelector((state) => state.search.value)
   const [on, setOn] = useState(true)
   const toggle = (btnID, eIDs) => {
-    console.log(btnID, '----key')
     // setOn(on => !on)
     // Get the button that triggered this
     const theButton = document.getElementById(btnID)
@@ -62,7 +61,7 @@ export default function DataTable() {
                           <tr>
                            <td className="expandable-icon">
                               <div
-                                className={on ? 'button' : 'button clicked'}
+                                className="button"
                                 style={{ cursor: 'pointer' }}
                                 id={key}
                                 onClick={() => {
