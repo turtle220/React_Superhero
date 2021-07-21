@@ -7,11 +7,75 @@ body {
   margin: 0 1em;
 }
 
-table {
-  margin: 1em 0;
-  border-collapse: collapse;
+.limitter {
+  width: 1366px;
+  margin: 0 auto;
+}
+.container-table {
+  width: 100%;
+  /* min-height: 100vh; */
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
 }
 
+.wrap-table {
+  width: 1170px;
+}
+.table-verb {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);
+  -moz-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);
+}
+.table-head {
+  position: absolute;
+  width: 100%;
+}
+.tableverb .table-body .table tbody:nth-child(even) {
+  background-color: #f8f6ff;
+}
+
+.row-head {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.column {
+  font-family: Lato-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+  background-color: #6c7ae0;
+  /* text-align: center; */
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-body {
+  max-height: 585px;
+}
+.table-td {
+  vertical-align: middle;
+  font-family: Lato-Regular;
+  font-size: 15px;
+  color: gray;
+  line-height: 1.4;
+  /* width: 20%; */
+}
+.expandable-icon {
+  width: 5%;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
 caption {
   text-align: left;
   font-style: italic;
@@ -23,7 +87,7 @@ td {
   padding: 0.25em 0.5em 0.25em 1em;
   vertical-align: text-top;
   text-align: left;
-  text-indent: -0.5em;
+  /* text-indent: -0.5em; */
 }
 
 th {
@@ -64,77 +128,55 @@ tr.hidden {
   display: none;
 }
 
-.row button {
-  background-color: transparent;
-  border: 0.1em solid transparent;
-  font: inherit;
-  padding: 0.25em 0.5em 0.25em 0.25em;
-  width: 100%;
-  text-align: left;
-}
+/* plus minus tollge button */
 
-.row button:focus,
-.row button:hover {
-  background-color: #ddd;
-  outline: 0.2em solid #00f;
-}
-
-.row button svg {
-  width: 0.8em;
-  height: 0.8em;
-  margin: 0 0 -0.05em 0;
-  fill: #66f;
-  transition: transform 0.25s ease-in;
-  transform-origin: center 45%;
-}
-
-.row button:hover svg,
-.row button:focus svg {
-  fill: #00c;
-}
-
-/* Lean on programmatic state for styling */
-.row button[aria-expanded='true'] svg {
-  transform: rotate(180deg);
-}
-
-.cell button {
-  font-size: 60%;
-  color: #000;
-  background-color: #00f;
-  padding: 0.3em 0.2em 0 0.2em;
-  border: 0.2em solid #00f;
+.button {
+  width: 30px;
+  height: 30px;
+  background: #70975b;
+  /* top: 105%; */
+  /* left: 92%; */
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
   border-radius: 50%;
-  line-height: 1;
-  text-align: center;
-  text-indent: 0;
-  transform: rotate(270deg);
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
+  /* padding-left: 40%; */
+  margin-left: 42%;
+  margin-top: 44%;
 }
 
-.cell button svg {
-  width: 1.25em;
-  height: 1.25em;
-  fill: #fff;
-  transition: transform 0.25s ease-in;
-  transform-origin: center 45%;
+.button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2px;
+  width: 50%;
+  background: white;
 }
 
-.cell button:hover,
-.cell button:focus {
-  background-color: #fff;
-  outline: none;
+.button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 2px;
+  background: white;
 }
 
-.cell button:hover svg,
-.cell button:focus svg {
-  fill: #00f;
+.button.clicked {
+  transform: translate(-50%, -50%) rotate(360deg);
+  background: #cc2a41;
 }
 
-/* Lean on programmatic state for styling */
-.cell button[aria-expanded='true'] svg {
-  transform: rotate(90deg);
+.button.clicked:before {
+  width: 0;
 }
-
 /* Proven method to visually hide something but */
 /* still make it available to assistive technology */
 .visually-hidden {
@@ -151,9 +193,9 @@ tr.hidden {
 .search-box {
   margin: auto;
   outline: none;
-  width: 120%;
+  width: 160%;
   height: 50px;
-  padding-left: 3%;
+  padding-left: 7%;
   border-radius: 5px solid #8f8f8f;
   border: 1px solid #8f8f8f;
   border-radius: 5px;
@@ -180,5 +222,18 @@ tr.hidden {
   width: 180%;
   cursor: pointer;
   text-decoration: none;
-}
 
+  background-color: #b80c4d;
+  border: #2e6da4;
+  font-family: Arial, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: normal;
+
+  border-radius: 4px;
+  line-height: 1.5;
+  text-decoration: none;
+}

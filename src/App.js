@@ -8,7 +8,6 @@ export default function App() {
   return (
     <div>
       <SearchBox />
-      <div style={{ height: '50px' }}></div>
       <DataTable />
     </div>
   )

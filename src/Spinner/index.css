@@ -15,11 +15,6 @@
     transform: translate3d(-50%, -50%, 0) rotate(360deg);
  }
 }
-/* .loading-spinner.-paused {
-  animation-play-state: paused;
-  opacity: 0.2;
-  transition: opacity linear 0.1s;
-} */
 .loading-spinner::before {
   animation: 1.5s linear infinite spinner;
   animation-play-state: inherit;
