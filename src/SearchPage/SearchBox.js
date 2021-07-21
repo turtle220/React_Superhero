@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Spinner from '../Spinner'
 
@@ -27,7 +27,7 @@ export default function DataTable() {
         })
       })
       .catch((error) => {
-        console.log(error, '-----error')
+        console.log(error, 'error')
       })
   }
 
@@ -59,12 +59,8 @@ export default function DataTable() {
         </div>
         <div style={{ width: '15%' }}></div>
         <div>
-          <button className='search-log'>
-            <a
-              style={{ textDecoration: 'none', color: 'black' }}
-              href='/searchlog'>
-              View Search Log
-            </a>
+          <button onClick={() => window.location.replace("/searchlog")} className='search-log'>
+            View Search Log
           </button>
         </div>
       </div>
